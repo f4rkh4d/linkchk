@@ -5,7 +5,3 @@ dist/
 .env
 .env.local
 bun-debug-*
-
-.cursor/
-.claude/
-CLAUDE.md

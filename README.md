@@ -19,7 +19,7 @@ linkchk README.md
 31 ok, 1 broken, 1 errored, 0 skipped  (of 33)
 ```
 
-exits non-zero if anything's broken — drop it in ci and forget it.
+exits non-zero if anything's broken. drop it in ci and forget it.
 
 ## why
 
@@ -27,7 +27,7 @@ exits non-zero if anything's broken — drop it in ci and forget it.
 - linkchk does concurrent `HEAD` requests, falls back to `GET` when servers 405
 - handles markdown inline, reference, autolink, image syntax + raw html `<a>`, `<img>`, `<link>`, `<script>`
 - skips urls inside code fences and inline code (so ur bash examples dont get pinged)
-- single binary compile via `bun build --compile` — no node setup on the ci runner
+- single binary compile via `bun build --compile`. no node setup on the ci runner
 
 ## install
 
@@ -70,22 +70,22 @@ linkchk README.md --show-ok
 | --- | --- | --- |
 | `--concurrency N` | 16 | parallel requests |
 | `--timeout S` | 10 | seconds per request |
-| `--ignore PATTERN` | — | regex to skip urls (repeatable) |
+| `--ignore PATTERN` |. | regex to skip urls (repeatable) |
 | `--json` | off | json output for tooling |
 | `--show-ok` | off | include ok urls in output |
 | `--stdin` | off | read from stdin |
-| `-h`, `--help` | — | show help |
-| `-V`, `--version` | — | show version |
+| `-h`, `--help` |. | show help |
+| `-V`, `--version` |. | show version |
 
 ## exit codes
 
-- **0** — every link is ok
-- **1** — at least one broken or errored
-- **2** — bad flags / unreadable file
+- **0**. every link is ok
+- **1**. at least one broken or errored
+- **2**. bad flags / unreadable file
 
 ## what counts as "ok"
 
-`2xx`, `3xx` redirects, and `401`/`403` (the url exists, it just requires auth — not your problem).
+`2xx`, `3xx` redirects, and `401`/`403` (the url exists, it just requires auth. not your problem).
 
 anything `4xx`/`5xx` outside that list = broken. network errors and timeouts = errored.
 
